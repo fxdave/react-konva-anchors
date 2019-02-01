@@ -1,0 +1,26 @@
+{
+  "name": "react-konva-anchors",
+  "version": "1.0.0",
+  "description": "A helping package for positioning, and sizing react-konva objects. HTML and CSS provide an easy solution for this, but for canvas, it is more painful. This library aims to ease your work with react-konva.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fxdave/react-konva-anchros.git"
+  },
+  "keywords": [
+    "react",
+    "konva",
+    "anchor",
+    "positioning",
+    "sizing"
+  ],
+  "author": "David Judge (David Biró)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fxdave/react-konva-anchros/issues"
+  },
+  "homepage": "https://github.com/fxdave/react-konva-anchros#readme"
+}
