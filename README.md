@@ -1,5 +1,5 @@
 # react-konva-anchros
-A helping package for positioning, and sizing react -konva objects. HTML and CSS provide an easy solution for this, but for canvas, it is more painful. This library aims to ease your work with react-konva.
+A helping package for positioning, and sizing react-konva objects. HTML and CSS provide an easy solution for this, but for canvas, it is more painful. This library aims to ease your work with react-konva.
 
 ## Installation
 `npm i react-konva-anchors`
@@ -104,7 +104,7 @@ A helping package for positioning, and sizing react -konva objects. HTML and CSS
 ```
 
 There are some konva objects where the origin is not at the center of the object for e.g Rect, Text.
-If you want to center it, you can use CenterAnchor. This will query the size of the shape and returns a new position for that. (Basically x=width / 2 , y=height / 2). So ensure that you wont move this element, If you want to move, drop into a group and move the group instead.
+If you want to center it, you can use CenterAnchor. This will query the size of the shape and returns a new position for that. (Basically x=width / 2 , y=height / 2). So ensure that you won't move this element, If you want to move, drop into a group and move the group instead.
 
 Use case: If you want to place a rectangle where you click, But you won't know the size of the rectangle, and you want to place in the middle of the pointer. Then this anchor will be a perfect choice.
 
@@ -146,8 +146,8 @@ The referenceOrigin is the same as elementOrigin but for the reference element.
 The referenceDesiredOrigin is the origin point where you want to place the element.
 The shift is a final transformation. 
 
-With origin's you can reach percentage based positioning.
-With shift's you can move by pixels.
+With origins you can reach percentage based positioning.
+With shifts you can move by pixels.
 
 Use case: For example, you can use it to pose a button to the top right corner of a rectangle.
 
@@ -164,9 +164,9 @@ Use case: For example, you can use it to pose a button to the top right corner o
 ```
 
 The result is a function which returns a computed result from the reference object for example a position.
-The isUpdateNeeded is a function that recives the element and the result and returns a boolean. If it is true the change function will be called.
+The isUpdateNeeded is a function that receives the element and the result and returns a boolean. If it is true the change function will be called.
 
-Use case: If you can't find right solution from the anchros above, you can use this.
+Use case: If you can't find right solution from the anchors above, you can use this.
 
 ## Contributing
 
