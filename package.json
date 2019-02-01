@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/fxdave/react-konva-anchros/issues"
   },
-  "homepage": "https://github.com/fxdave/react-konva-anchros#readme"
+  "homepage": "https://github.com/fxdave/react-konva-anchros#readme",
+  "dependencies": {
+    "react": "^16.7.0"
+  }
 }
