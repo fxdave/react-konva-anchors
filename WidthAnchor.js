@@ -1,5 +1,5 @@
-import React from 'react'
 import Anchor from './Anchor'
+
 class WidthAnchor extends Anchor {
 
 

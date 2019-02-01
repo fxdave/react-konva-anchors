@@ -4,7 +4,7 @@
   "description": "A helping package for positioning, and sizing react-konva objects. HTML and CSS provide an easy solution for this, but for canvas, it is more painful. This library aims to ease your work with react-konva.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --require @babel/register ./*.test.js"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,13 @@
     "url": "https://github.com/fxdave/react-konva-anchros/issues"
   },
   "homepage": "https://github.com/fxdave/react-konva-anchros#readme",
-  "dependencies": {
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "mocha": "^5.2.0",
     "react": "^16.7.0"
   }
 }
