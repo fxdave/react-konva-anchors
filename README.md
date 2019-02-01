@@ -6,7 +6,7 @@ A helping package for positioning, and sizing react -konva objects. HTML and CSS
 
 ## Example
 
-```javascriptreact
+```javascript
 <Group ref={this.entity}>
 
             <Rect
@@ -97,7 +97,7 @@ A helping package for positioning, and sizing react -konva objects. HTML and CSS
 
 ### CenterAnchor
 
-```javascriptreact
+```javascript
 <CenterAnchor
     element={() => this.A_KONVA_ELEMENT_REGERENCE.current}
     change={(x, y) => this.setState({ A_KONVA_ELEMENT_POSITION: { x, y } })} />
@@ -112,7 +112,7 @@ See: [konvajs/konva#487].
 
 ### WidthAnchor
 
-```javascriptreact
+```javascript
 <WidthAnchor
     reference={() => this.KONVA_ELEMENT_REFERENCE_TO_WATCH.current}
     element={() => this.KONVA_ELEMENT_REFERENCE_TO_CHANGE.current}
@@ -125,7 +125,7 @@ Use case: If you have a text, and you want to make a rectangle background for th
 
 ### PositionAnchor
 
-```javascriptreact
+```javascript
 <PositionAnchor            
     element={() => this.KONVA_ELEMENT_REFERENCE_TO_MOVE.current}
     elementOrigin={{x:0.5,y:0.5}}
@@ -150,3 +150,24 @@ With origin's you can reach percentage based positioning.
 With shift's you can move by pixels.
 
 Use case: For example, you can use it to pose a button to the top right corner of a rectangle.
+
+### CustomAnchor
+
+```javascript
+    <CustomAnchor 
+        reference={ () => this.KONVA_ELEMENT_REFERENCE_TO_WATCH.current }
+        element={ () => this.KONVA_ELEMENT_REFERENCE_TO_CHANGE.current }
+        result={ (ref) => ({ x: ref.width(), y:0 }) }
+        isUpdateNeeded={ (el, res) => el.x() !== res.x || el.y() !== res.y  }
+        change={ (res) => { this.setState({ KONVA_ELEMENT_PROPERTY: res }) } }
+    />   
+```
+
+The result is a function which returns a computed result from the reference object for example a position.
+The isUpdateNeeded is a function that recives the element and the result and returns a boolean. If it is true the change function will be called.
+
+Use case: If you can't find right solution from the anchros above, you can use this.
+
+## Contributing
+
+If you want to help me, form an issue, or send pull requests.

@@ -32,7 +32,7 @@ it("tests CustomAnchor", function (done) {
         height: 20
       })
     }),
-    res: (ref) => ({ x: ref.getClientRect().width, y: 0 }),
+    result: (ref) => ({ x: ref.getClientRect().width, y: 0 }),
     isUpdateNeeded: (el, res) => el.x() !== res.x || el.y() !== res.y,
     change: (res) => {
 
