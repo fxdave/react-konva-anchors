@@ -2,7 +2,28 @@ import React from 'react'
 import Anchor from './Anchor'
 
 class PositionAnchor extends Anchor {
-    
+
+    constructor(props) {
+        super(props)
+        this.update = () => {
+            if (this.props.reference() && this.props.element()) {
+
+
+                let p = {
+                    x: this.props.element().x(),
+                    y: this.props.element().y()
+                }
+
+                let newPos = this.newPos()
+
+                if (newPos.x !== p.x || newPos.y !== p.y) {
+                    this.props.change(newPos.x, newPos.y)
+                }
+            }
+
+        }
+    }
+
     newPos() {
         let referenceRect = this.props.reference().getClientRect()
         let elementRect = this.props.element().getClientRect()
@@ -12,9 +33,9 @@ class PositionAnchor extends Anchor {
             p: { x: this.props.reference().x(), y: this.props.reference().y() }, //pos
             o: { x: 0, y: 0 }, //originalOrigin
             d: { x: 0, y: 0 }, //desiredOrigin
-            s: { 
-                x: referenceRect.width, 
-                y: referenceRect.height 
+            s: {
+                x: referenceRect.width,
+                y: referenceRect.height
             }, //size
         }
 
@@ -29,9 +50,9 @@ class PositionAnchor extends Anchor {
             p: { x: this.props.element().x(), y: this.props.element().y() }, //pos
             o: { x: 0, y: 0 }, //originalOrigin
             d: { x: 0, y: 0 }, //desiredOrigin
-            s: { 
-                x: elementRect.width, 
-                y: elementRect.height 
+            s: {
+                x: elementRect.width,
+                y: elementRect.height
             }, //size
         }
 
@@ -43,36 +64,19 @@ class PositionAnchor extends Anchor {
         //shift
         let S = { x: 0, y: 0 }
 
-        if(this.props.shift !== undefined)
+        if (this.props.shift !== undefined)
             S = this.props.shift
 
         let res
         res = this.sub(R.p, this.mul(R.o, R.s))
         res = this.add(res, this.mul(R.d, R.s))
-        res = this.add(res, this.mul(E.o, E.s))        
+        res = this.add(res, this.mul(E.o, E.s))
         res = this.sub(res, this.mul(E.d, E.s))
         res = this.add(res, S)
 
         return res
     }
 
-    update = () => {
-        if (this.props.reference() && this.props.element()) {
-
-            
-            let p = { 
-                x: this.props.element().x(), 
-                y: this.props.element().y() 
-            }
-
-            let newPos = this.newPos()
-
-            if(newPos.x !== p.x || newPos.y !== p.y) {
-                this.props.change(newPos.x, newPos.y)
-            }
-        }
-
-    }
 
 
     add(A, B) {

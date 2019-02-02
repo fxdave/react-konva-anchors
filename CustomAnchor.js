@@ -12,16 +12,19 @@ import Anchor from './Anchor'
 
 class CustomAnchor extends Anchor {
 
+    constructor(props) {
+        super(props)
+        this.update = () => {
 
-    update = () => {
-
-        if (this.props.reference() && this.props.element()) {
-            let res = this.props.result(this.props.reference())            
-            if(this.props.isUpdateNeeded(this.props.element(), res)) {
-                this.props.change(res)
+            if (this.props.reference() && this.props.element()) {
+                let res = this.props.result(this.props.reference())
+                if (this.props.isUpdateNeeded(this.props.element(), res)) {
+                    this.props.change(res)
+                }
             }
         }
     }
+
 }
 
 export default CustomAnchor

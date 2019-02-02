@@ -4,13 +4,13 @@ class Anchor extends React.Component {
     constructor(props) {
         super(props)
 
+        this.update = () => {
+            console.error("Anchor: update is not implemented");
+        }
+
         setTimeout(() => {
             window.requestAnimationFrame(this.update)
         }, 0)
-    }
-
-    update = () => {
-        console.error("Anchor: update is not implemented");
     }
 
     componentWillUpdate() {
