@@ -3,7 +3,7 @@ import Anchor from './Anchor'
 class WidthAnchor extends Anchor {
 
     constructor(props) {
-
+        super(props)
         this.update = () => {
 
             if (this.props.reference() && this.props.element()) {
