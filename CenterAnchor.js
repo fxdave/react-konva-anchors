@@ -16,7 +16,7 @@ class CenterAnchor extends Anchor {
                 let newX = - elementRect.width / 2
                 let newY = - elementRect.height / 2
 
-                if (x !== newX || y !== newY) {
+                if (Math.round(x) !== Math.round(newX) || Math.round(y) !== Math.round(newY)) {
                     this.props.change(newX, newY)
                 }
             }

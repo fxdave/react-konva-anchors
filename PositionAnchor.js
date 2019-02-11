@@ -16,7 +16,7 @@ class PositionAnchor extends Anchor {
 
                 let newPos = this.newPos()
 
-                if (newPos.x !== p.x || newPos.y !== p.y) {
+                if (Math.round(newPos.x) !== Math.round(p.x) || Math.round(newPos.y) !== Math.round(p.y)) {
                     this.props.change(newPos.x, newPos.y)
                 }
             }

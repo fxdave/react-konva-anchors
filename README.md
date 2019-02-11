@@ -128,14 +128,15 @@ Use case: If you have a text, and you want to make a rectangle background for th
 ```javascript
 <PositionAnchor            
     element={() => this.KONVA_ELEMENT_REFERENCE_TO_MOVE.current}
-    elementOrigin={{x:0.5,y:0.5}}
-    elementDesiredOrigin={{x:0.5, y:0.5}}
+    elementOrigin={{x:0.5,y:0.5}} // the element is centered originally
+    elementDesiredOrigin={{x:0.5, y:0.5}} // we don't want to change it so we keep it centered
     
     reference={() => this.KONVA_ELEMENT_REFERENCE_TO_WATCH.current}
-    referenceOrigin={{x:0,y:0}}
-    referenceDesiredOrigin={{x:1, y:0}}
+    referenceOrigin={{x:0,y:0}}  // the reference element starts from the left top corner
+    referenceDesiredOrigin={{x:1, y:0}} // we want to move the element to the top right corner
+    // basically it will just move the element origin to the desired reference origin
     
-    shift={{x:-25, y:0}}
+    shift={{x:-25, y:0}} // then we shift it by -25 on x
     
     change={(x, y) => this.setState({ KONVA_ELEMENT_POSITION: { x, y } })} />
 ```
@@ -164,7 +165,7 @@ Use case: For example, you can use it to pose a button to the top right corner o
 ```
 
 The result is a function which returns a computed result from the reference object for example a position.
-The isUpdateNeeded is a function that receives the element and the result and returns a boolean. If it is true the change function will be called.
+The isUpdateNeeded is a function that receives the element and the result and returns a boolean. If it is true the change function will be called. Hint: use Math.round when you compare numbers.
 
 Use case: If you can't find right solution from the anchors above, you can use this.
 

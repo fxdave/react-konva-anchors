@@ -10,7 +10,7 @@ class WidthAnchor extends Anchor {
                 let elementRect = this.props.element().getClientRect()
                 let referenceRect = this.props.reference().getClientRect()
                 let padding = this.props.padding ? this.props.padding * 2 : 0
-                if (elementRect.width !== referenceRect.width + padding) {
+                if (Math.round(elementRect.width) !== Math.round(referenceRect.width + padding)) {
 
                     this.props.change(referenceRect.width + padding)
                 }
