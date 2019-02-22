@@ -7,6 +7,8 @@ module.exports = {
     mode: "production",
     output: {
         filename: 'main.js',
+        library: 'ReacKonvaAnchors',
+        libraryTarget: 'umd'
     },
     module: {
         rules: [
@@ -19,6 +21,9 @@ module.exports = {
             }
         ]
     },
+    externals: [
+        'react',
+    ],
 
     /**
      * Determine the array of extensions that should be used to resolve modules.
